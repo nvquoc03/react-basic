@@ -1,4 +1,6 @@
 import React from 'react';
+import ChildComponent from './ChildComponents';
+
 
 class MyComponent extends React.Component {
 
@@ -25,7 +27,7 @@ class MyComponent extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        console.log('check render', this.state)
 
         return (
             <>
@@ -42,6 +44,10 @@ class MyComponent extends React.Component {
                     </form>
 
                 </div>
+                <ChildComponent
+                    name={'VanQuoc'}
+                    age={'20'}
+                />
             </>
         )
     }
