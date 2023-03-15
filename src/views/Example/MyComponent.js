@@ -3,37 +3,44 @@ import React from 'react';
 class MyComponent extends React.Component {
 
     state = {
-        name: 'VQ',
-        age: '20'
+        firstName: '',
+        lastName: ''
 
     }
-
-    handleOnChangeName = (event) => {
-
+    handleFirstName = (event) => {
         this.setState({
-            name: event.target.value
+            firstName: event.target.value
         })
     }
 
-    handleOnClick = () => {
-        alert('Clicked!')
+    handleLastName = (event) => {
+        this.setState({
+            lastName: event.target.value
+        })
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault() // Ngăn tải lại trang bởi submit
+        console.log('Input is: ', this.state)
     }
 
     render() {
-        console.log('call render: ', this.state)
+        console.log(this.state)
 
         return (
             <>
-                <div className='first'>
-                    <input value={this.state.name} type='text'
-                        onChange={(event) => this.handleOnChangeName(event)} />
-                    My name is {this.state.name}
-                </div>
-                <div className='second'>
-                    and I am {this.state['age']} years old
-                </div>
-                <div className='third'>
-                    <button onClick={() => this.handleOnClick()}>Click me</button>
+                <div>
+                    <form>
+                        <label htmlFor='fname'>First name:</label><br />
+                        <input type="text" value={this.state.firstName}
+                            onChange={(event) => this.handleFirstName(event)} /><br />
+                        <label htmlFor='lname'>Last name:</label><br />
+                        <input type="text" value={this.state.lastName}
+                            onChange={(event) => this.handleLastName(event)} /><br /><br />
+                        <input type="submit" value="Submit"
+                            onClick={(event) => this.handleSubmit(event)} />
+                    </form>
+
                 </div>
             </>
         )
