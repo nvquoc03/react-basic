@@ -38,6 +38,7 @@ class AddComponent extends React.Component {
             title: '',
             salary: ''
         })
+
     }
     render() {
         return (
