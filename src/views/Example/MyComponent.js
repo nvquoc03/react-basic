@@ -7,9 +7,9 @@ class MyComponent extends React.Component {
 
     state = {
         arrJobs: [
-            { id: 'abcJob1', title: 'Developers', salary: '500' },
-            { id: 'abcJob2', title: 'Coders', salary: '600' },
-            { id: 'abcJob3', title: 'Testers', salary: '300' }
+            { id: 'Job1', title: 'Developers', salary: '500' },
+            { id: 'Job2', title: 'Coders', salary: '600' },
+            { id: 'Job3', title: 'Testers', salary: '300' }
         ]
 
     }
@@ -27,6 +27,13 @@ class MyComponent extends React.Component {
         this.setState({
             arrJobs: currentJobs
         })
+    }
+
+    componentDidUpdate = (prevProps, prevState) => {
+        console.log('run componentDidUpdate ', 'prev state:', prevState, 'current state: ', this.state)
+    }
+    componentDidMount = () => {
+        console.log('run componentDidMount')
     }
 
     render() {
