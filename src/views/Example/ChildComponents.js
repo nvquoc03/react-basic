@@ -26,7 +26,7 @@ class ChildComponent extends React.Component {
             <>
                 {showJobs === false ?
                     <div>
-                        <button style={{ color: 'red' }}
+                        <button
                             onClick={() => this.handleShowHide()}>Show
                         </button>
                     </div>
