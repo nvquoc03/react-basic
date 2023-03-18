@@ -1,6 +1,7 @@
 import React from 'react';
 import ChildComponent from './ChildComponents';
 import AddComponent from './AddComponent';
+import Color from '../HOC/Color';
 
 
 class MyComponent extends React.Component {
@@ -55,4 +56,4 @@ class MyComponent extends React.Component {
     }
 }
 
-export default MyComponent;
+export default Color(MyComponent);

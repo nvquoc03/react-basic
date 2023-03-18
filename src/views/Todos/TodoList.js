@@ -1,6 +1,7 @@
 import React from 'react';
 import AddTodoList from './AddTodoList';
-import './TodoList.scss'
+import './TodoList.scss';
+import Color from '../HOC/Color';
 
 import { toast } from 'react-toastify';
 
@@ -134,4 +135,4 @@ class TodoList extends React.Component {
     }
 }
 
-export default TodoList;
+export default Color(TodoList);
